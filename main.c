@@ -3,12 +3,14 @@
 #include <immintrin.h>
 #include "Operator/OperationFunc.h"
 #include "Version.h"
-
+#include <time.h>
+#include <unistd.h>
+#include "TestUtils/TestUtils.h"
 
 
 int main()
 {
-
+    clock_t time1, time2;
     #ifdef __AVX512F__
     printf("AVX-512 supported by compiler\n");
     #elif defined(__AVX2__)
@@ -21,20 +23,9 @@ int main()
     printf("Nessuna SIMD supportata\n");
     #endif
 
-    uint64_t N = 16U;
-    int a[N], b[N], result[N];
 
-    // Inizializzazione array
-    for (int i = 0; i < N; i++) {
-        a[i] = i;
-        b[i] = i * 2;
-    }
 
-    ArrayIntAdd(a, b, result, &N );
+    LetturaFileBinariTest();
 
-    // Stampa risultato
-    for (int i = 0; i < N; i++) {
-        printf("%d + %d = %d\n", a[i], b[i], result[i]);
-    }
     return 0;
 }

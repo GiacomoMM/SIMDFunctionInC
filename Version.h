@@ -7,13 +7,18 @@
 //
 //
 //----------------------------------------------------------
-
+//
+//Version 1.0 Beta 1 Build 2
+//Creazione Binari di Test con Octave e inizio modulo per testare Avx2
+//
+//
+//----------------------------------------------------------
 
 
 #define Major ( 1 )
 #define Minor ( 0 )
 #define Beta  ( 1 )
-#define Build ( 1 )
+#define Build ( 2 )
 
 
 
